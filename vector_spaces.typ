@@ -22,9 +22,9 @@ A system of vectors $e_1, e_2, ..., e_n$ is a basis of a vector space $V :=$
 + $exists!$ linear expression of a vector $v$ through $e_1, ..., e_n$.
 
 Coordinates of a vector $v$ in a basis $e_1, e_2, ..., e_n :=$
-coefficients of linear expression of $v$ through $e_1, e_2, ..., e_n$.
+coefficients of a linear expression of $v$ through $e_1, e_2, ..., e_n$.
 
-A vector space with basis of $n$ vectors $tilde.eq F^n$.
+A vector space with a basis of $n$ vectors $tilde.eq F^n$.
 
 A dimension of a vector space $:= hash$ its basis vectors. 
 
