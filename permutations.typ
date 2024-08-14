@@ -6,6 +6,11 @@ A permutation $:=$ a bijection between ${1, ..., n}$.
 
 A symmetric group of an order $n := S_n :=$ a set of permutations of the length $n$.
 
+An alternating group $:= A_n := {s in S_n mid(|) s "is even"}$.
+
+The Kleinian group $:=
+{1, mat(1, 2) mat(3, 4), mat(1, 3) mat(2, 4), mat(1, 4) mat(2, 3)}$.
+
 They write $mat(1, 2, ..., n; pi_1, pi_2, ..., pi_n)$.
 
 A cycle $:=$ a permutation that cycles through the elements.
