@@ -2,7 +2,7 @@
 #show: cfg
 
 = Vector spaces
-$(V, +, dot)$ is a vector space over a fiead $F :=$
+$(V, +, dot)$ is a vector space over a field $F :=$
 + $(V, +)$ is an abelian group.
 + $dot in V^(F times V)$.
 + $V$ is closed under $dot$.
