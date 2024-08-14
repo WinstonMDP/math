@@ -40,9 +40,9 @@ a square matrix with nonzero elements on the main diagonal and only on it.
 
 An identity matrix $:= E := "diag"(1, ..., 1)$. 
 
-$L_n (F) :=$ a set of square matrixes of the order $n$.
+$op(L_n) F :=$ a set of square matrixes of the order $n$.
 
-$L_n (F)$ is an associative algebra with a unit having zero divisors.
+$op(L_n) F$ is an associative algebra with a unit having zero divisors.
 
 A matrix $A = E_(i j) := a_(i j) = delta_(i j)$.
 

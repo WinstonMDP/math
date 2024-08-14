@@ -52,6 +52,6 @@ A cofactor of an element $a_(i j) := A_(i j) := (-1)^(i + j) M_(i j)$.
 
 A bordering minor $:=$ a minor obtained by attaching a row and a column.
 
-The Kronecker symbol $:= delta_(i j) := cases(1 "if" i = j, 0 "else")$.
+The Kronecker symbol $:= delta_(i j) := cases(1 "if" i = j, 0)$.
 
 $sum_k a_(k i) A_(k j) = sum_k a_(i k) A_(j k) = delta_(i j) det A$.
