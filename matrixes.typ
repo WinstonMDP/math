@@ -92,6 +92,9 @@ transformations over rows. Unlike rows since their order isn't preserved.
 
 $"rk"(A B) <= min(op("rk") A, op("rk") B)$.
 
+$forall n times s$ matrix $A$ and $s times m$ matrix $B:
+op("rk") A + op("rk") B - s <= "rk"(A B)$.
+
 A square matrix $A$ of an order $n$ is nonsingular $:= op("rk") A = n$.
 
 A square matrix $A$ is invertible $<->$ it's nonsingular.
