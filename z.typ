@@ -20,7 +20,7 @@ p_1^max(alpha_1, beta_1)...$.
 
 $n, m$ are coprime $:= "GCD"(n, m) = 1$.
 
-$forall b != 0 space exists q, r in ZZ:$
+$forall b != 0 thick exists q, r in ZZ:$
 + $0 <= r < abs(b)$.
 + $a = b q + r$.
 

@@ -19,7 +19,7 @@ Example: $mat(1, 2, 4) = mat(1, 2, 3, 4; 2, 4, 3, 1)$.
 
 $e := mat(1, ..., n; 1, ..., n)$.
 
-$i, j$ are $pi$-equivalent $:= exists s in ZZ space j = (pi^s)_i$.
+$i, j$ are $pi$-equivalent $:= exists s in ZZ: j = (pi^s)_i$.
 
 An $pi$-orbit $:=$ an equivalent class of $pi$-equivalence.
 
