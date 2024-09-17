@@ -14,4 +14,6 @@ $ZZ_n$ is a field $<-> n$ is prime.
 
 $[z]_n$ is invertible in $ZZ_n <-> "GCD"(n, z) = 1$.
 
-*Fermat's little theorem*: $x^p = x$ in $ZZ_p$ .
+*Fermat's little theorem*: $x^p equiv_p x$.
+
+$(p - 1)! equiv_p -1$.
