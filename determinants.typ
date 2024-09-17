@@ -30,7 +30,7 @@ $forall$ nonsingular square matrix $A: det(A^(-1)) = det(A)^(-1)$.
 $forall$ square matrixes $B, C: det mat(B, D; 0, C) = det(B) det(C)$.
 
 The Vandermonde's determinant $:=
-mat(
+mat(delim: "|",
        1,    x_1,  x_1^2,       ..., x_1^(n - 1);
        1,    x_2,  x_2^2,       ..., x_2^(n - 1);
   dots.v, dots.v, dots.v, dots.down,      dots.v;
