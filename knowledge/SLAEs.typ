@@ -1,4 +1,4 @@
-#import "cfg.typ": cfg
+#import "../cfg.typ": cfg
 #show: cfg
 
 = Systems of linear algebraic equations (SLAEs)
