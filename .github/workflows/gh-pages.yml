@@ -1,0 +1,29 @@
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    permissions:
+      pages: write
+      id-token: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: typst-community/setup-typst@v3
+      - run: typst c knowledge/*.typ
+      - run: typst c exers/*.typ
+
+      - run: sudo apt install tree
+      - run: tree -H "." -I "index.html" -P "*.pdf" -o index.html
+
+      - run: tar -cvf github-pages.tar knowledge/*.pdf exers/*.pdf index.html
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: "github-pages"
+          path: "github-pages.tar"
+      - uses: actions/deploy-pages@v4
