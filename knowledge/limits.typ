@@ -1,47 +1,104 @@
-#import "../cfg.typ": cfg
+#import "../cfg.typ": *
 #show: cfg
 
 = Limits
 $lim_(n -> oo) x_n :=
-a: forall epsilon > 0 thick exists N in NN thick forall n > N: abs(x_n - a) < epsilon$.
+a: all(epsilon > 0) ex(N in NN) all(n > N): abs(x_n - a) < epsilon$
 
-A sequence is covergent $:=$ it has a limit.
+A sequence is convergent $:=$ it has a limit.
 
 A sequence is fundamental $:=
-forall epsilon > 0 thick exists N thick forall n, m > N: abs(x_n - x_m) < epsilon$.
+all(epsilon > 0) ex(N) all(n\, m > N): abs(x_n - x_m) < epsilon$.
 
-*The Cauchy criterion:* A sequence is fundamental $<->$ it coverges.
+*The Cauchy criterion:* A sequence is fundamental $<->$ it converges.
 
 *Bernoulli's principle:*
-$forall x >= -1: cases(1 + x n <= (1 + x)^n "if" x = 0, 1 + x n < (1 + x)^n)$.
+$all(x >= -1): cases(1 + x n <= (1 + x)^n "if" x = 0, 1 + x n < (1 + x)^n)$
 
-Euler's number $:= e := lim_(n -> oo) (1 + 1/n)^n$.
+Euler's number $:= e := lim_(n -> oo) (1 + 1/n)^n$
 
-$x_n -> oo := forall c in RR thick exists N in NN thick forall n > N: c < abs(x_n)$.
+$x_n -> oo := all(c in RR) ex(N in NN) all(n > N): c < abs(x_n)$
 
-$liminf_(k -> oo) x_k := lim_(n -> oo) inf_(n <= k) x_k$.
+$liminf_(k -> oo) x_k := lim_(n -> oo) inf_(n <= k) x_k$
 
-A partial limit of a sequence $:=$ a limit of its subsequence.
+A partial limit of a sequence $:=$ a limit of its subsequence
 
-A series $:=$
-a sum of the series $:=
-sum_(k = 1)^oo a_k := lim_(n -> oo) sum_(k = 1)^n a_k$.
+A function $f: RR supset.eq E -> RR$ converges to $A$ with $x$ tending to a limit
+  point $a :=
+lim_(x -> a) f(x) = A :=
+all(epsilon > 0) ex(delta > 0) all(x in E):
+  0 < abs(x - a) < delta -> abs(f(x) - A) < epsilon$
 
-The $n$-th partial sum of a series $:= sum_(k = 1)^n a_k$.
+#let punc(U, E) = math.attach(
+  math.limits(U),
+  t: math.circle.stroked.tiny,
+  br: E,
+)
 
-A series $sum_(n = 1)^oo a_n $ coverges absolutely $:=
-sum_(n = 1)^oo abs(a_n)$ coverges.
+$lim_(x -> a) f(x) = A <->
+all(V_RR (A)) ex(punc(U, E)(a)): f[punc(U, E)(a)] subset.eq V_RR (A)$
 
-$limsup_(n -> oo) root(n, abs(a_n)) < 1 -> sum_(n = 1)^oo a_n "coverges absolutely"$.
+$lim_(x -> a) f(x) = A <->
+all({x_n} subset.eq E without a):
+lim_(n -> oo) x_n = a -> lim_(n -> oo) f(x_n) = A$
 
-$1 < limsup_(n -> oo) root(n, abs(a_n)) -> sum_(n = 1)^oo a_n "diverges"$.
+$cal(B) subset.eq op(cal(P)) X$ is a base in a set $X :=$
++ $all(B in cal(B)): B != emptyset$
++ $all(B_1\, B_2 in cal(B)) ex(B in cal(B)): B subset.eq B_1 sect B_2$
 
-$lim_(n -> oo) abs(a_(n + 1)/a_n) < 1 -> sum_(n = 1)^oo a_n "coverges absolutely"$.
+A number $A in RR$ is a limit of a function $f: X -> RR$ on a base $cal(B)$ in
+  $X :=
+lim_cal(B) = A :=
+all(V(A)) ex(B in cal(B)): f[B] subset.eq V(A) $
 
-$1 < lim_(n -> oo) abs(a_(n + 1)/a_n) -> sum_(n = 1)^oo a_n "diverges"$.
+An oscillation of a function $f: X -> RR$ on a set $E subset.eq X :=
+omega(f, E) :=
+sup_(x_1, x_2 in E) abs(f(x_1) - f(x_2))$
 
-$forall$ a nonincreasing sequence $a:
-(forall n: 0 <= a_n) ->
-(sum_(n = 0)^oo 2^n a_(2^n) "coverges" <-> sum_(n = 1)^oo a_n "coverges")$
+$ex(lim_cal(B) f) <->
+all(epsilon > 0) ex(B in cal(B)): omega(f, B) < epsilon$
 
-$e = sum_(n = 0)^oo 1/n!$.
+$ex(lim_cal(B)_Y g) ->
+(all(B_Y in cal(B)_Y) ex(B_X in cal(B)_X): f[B_X] subset.eq B_Y) ->
+lim_cal(B)_X g compose f = lim_cal(B)_Y g$
+
+$lim_(x -> oo) (1 + 1/x)^x = e$
+
+A function is monotone $:=$ it's nondecreasing or nonincreasing
+
+$inf E, sup E$ are limit points $->$
+(a monotone function has a limit $<->$ it's bounded)
+
+A property between functions holds finally on a base $cal(B) :=
+ex(B in cal(B)):$ in which property holds
+
+A function $f$ is infinitiesimal on a base $cal(B) := lim_cal(B) f = 0$
+
+A function $f$ is infinitesimal compared to a function $g$ on a base $cal(B) :=
+f =_cal(B) o(g) :=
+ex("a inifnitesimal function" alpha): f(x) = alpha(x) g(x)$ holds finally on
+  $cal(B)$
+
+A function $f$ is infinitesimal function of a higher order compared to a
+  infinitesimal function $g$ on a base $cal(B) :=
+f =_cal(B) o(g)$
+
+$f =_cal(B) O(g) :=
+ex("finally bounded on" cal(B) "function"):
+f(x) = beta(x) g(x)$ holds on finally on $cal(B)$
+
+$f, g$ has the same order on a basis $cal(B) :=
+f =_cal(B) O(g) and g =_cal(B) O(f)$
+
+$f tilde g := ex(alpha): lim_cal(B) alpha(x) = 1 and f(x) = alpha(x) g(x)$
+
+$sin x tilde
+ln(1 + x) tilde
+e^x - 1 tilde
+((1 + x)^alpha - 1)/alpha tilde
+x$
+with a base $x -> 0$
+
+$all(alpha > 0): log_a x =_(x -> +oo) o(x^alpha)$
+
+$all(a > 1): x^alpha =_(x -> +oo) o(a^x)$

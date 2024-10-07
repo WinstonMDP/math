@@ -1,4 +1,4 @@
-#import "../cfg.typ": cfg
+#import "../cfg.typ": *
 #show: cfg
 
 = $RR$
@@ -36,3 +36,9 @@ exists$ a finite set $Y subset.eq X: [a, b] = union Y$.
 
 $x$ is a limit point of $A subset.eq RR :=
 abs((x - delta, x + delta) sect A) >= aleph_0$.
+
+$RR_+ := {x in RR mid(|) 0 < x}$
+
+$exp_a x := a^x$ where $a > 0 and a != 1$
+
+$exp_a$ is a bijection: $RR -> RR_+$
