@@ -36,6 +36,6 @@ A signature $:=$ a set of symbols for predicates and functions
 
 An interpretation $:=$
 a function, which maps symbols of a signature to predicates and functions with
-a some common domain
+  a some common domain
 
 A model $:=$ a pair of an interpretaion and the corresponding nonempty domain
